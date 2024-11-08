@@ -1,0 +1,47 @@
+{
+  "name": "ppanel-web",
+  "private": true,
+  "homepage": "https://github.com/web-ppanel/ppanel-web",
+  "bugs": {
+    "url": "https://github.com/web-ppanel/ppanel-web/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-ppanel/ppanel-web.git"
+  },
+  "license": "GUN",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "prepare": "./scripts/prepare.sh",
+    "prettier": "prettier -c --write \"**/**\"",
+    "release": "./scripts/release.sh"
+  },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{js,jsx,cjs,mjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --parser=typescript --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@repo/commitlint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/release-config": "workspace:*",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "turbo": "^2.2.3",
+    "typescript": "5.6.3"
+  },
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=18"
+  }
+}

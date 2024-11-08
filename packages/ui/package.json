@@ -1,0 +1,24 @@
+{
+  "name": "@repo/ui",
+  "private": true,
+  "exports": {
+    "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./code": "./src/code.tsx"
+  },
+  "scripts": {
+    "generate:component": "turbo gen react-component",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@turbo/gen": "^2.2.3",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
+  }
+}
